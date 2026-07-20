@@ -283,6 +283,14 @@ h3 {
   line-height: 1.55;
 }
 
+.home-goal {
+  max-width: 700px;
+  margin: 18px 0 0;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 750;
+}
+
 .hero-actions,
 .contact-actions {
   display: flex;
@@ -515,6 +523,115 @@ h3 {
 
 .about-columns p {
   margin: 0;
+}
+
+.home-about {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1.45fr);
+  gap: clamp(40px, 9vw, 140px);
+  background: white;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.home-about-copy {
+  max-width: 920px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.home-about-copy .large-copy {
+  max-width: 860px;
+  margin-bottom: 0;
+  color: var(--ink);
+  font-size: clamp(25px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.perspective-section {
+  background: #dfe9e5;
+}
+
+.perspective-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #95a89e;
+  border-bottom: 1px solid #95a89e;
+}
+
+.perspective-grid article {
+  min-height: 330px;
+  padding: 28px;
+  border-right: 1px solid #95a89e;
+}
+
+.perspective-grid article:last-child {
+  border-right: 0;
+}
+
+.perspective-grid > article > span,
+.page-directory > a > span,
+.role-experience-grid > article > span {
+  color: var(--coral-dark);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.perspective-grid h3 {
+  margin-top: 72px;
+  font-size: 30px;
+}
+
+.perspective-grid p {
+  margin: 18px 0 0;
+  color: #45514b;
+}
+
+.page-directory-section {
+  background: var(--paper);
+}
+
+.page-directory {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.page-directory > a {
+  display: grid;
+  min-height: 280px;
+  padding: 26px;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.page-directory > a:hover {
+  border-color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.page-directory h3 {
+  margin-top: 42px;
+  font-size: 32px;
+}
+
+.page-directory p {
+  max-width: 520px;
+  margin: 14px 0 0;
+  color: var(--muted);
+}
+
+.page-directory b {
+  margin-top: 26px;
+  color: var(--green);
+  font-size: 14px;
 }
 
 .personal-quote {
@@ -1360,6 +1477,151 @@ blockquote {
   font-size: 19px;
 }
 
+.grounded-hero {
+  background: var(--paper);
+}
+
+.grounded-hero > p:last-child {
+  max-width: 880px;
+}
+
+.role-experience-section {
+  background: white;
+}
+
+.role-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.role-experience-grid article {
+  min-height: 340px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.role-experience-grid h3 {
+  margin-top: 54px;
+  font-size: 28px;
+}
+
+.role-experience-grid p {
+  margin: 18px 0 0;
+  color: var(--muted);
+}
+
+.role-experience-grid small {
+  display: block;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--green);
+  font-weight: 750;
+  line-height: 1.6;
+}
+
+.experience-detail-section {
+  background: var(--paper);
+}
+
+.experience-list {
+  border-top: 1px solid var(--ink);
+}
+
+.experience-entry {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1.4fr);
+  gap: clamp(28px, 6vw, 90px);
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry-meta {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.entry-meta span {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.entry-meta small {
+  color: var(--coral-dark);
+  font-weight: 750;
+}
+
+.entry-content h3 {
+  font-size: clamp(27px, 3.4vw, 44px);
+}
+
+.entry-summary {
+  margin: 12px 0 0;
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.entry-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 4vw, 52px);
+  margin-top: 26px;
+}
+
+.entry-points p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.entry-points strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ink);
+}
+
+.education-section {
+  background: #dfe9e5;
+}
+
+.education-list {
+  margin-bottom: 34px;
+  border-top: 1px solid #95a89e;
+}
+
+.education-list article {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1.4fr);
+  gap: clamp(28px, 6vw, 90px);
+  padding: 28px 0;
+  border-bottom: 1px solid #95a89e;
+}
+
+.education-list article > span {
+  color: #4a5750;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.education-list h3 {
+  font-size: 28px;
+}
+
+.education-list p {
+  margin: 8px 0 0;
+  color: #4a5750;
+}
+
+.interaction-page {
+  padding-top: clamp(48px, 6vw, 82px);
+}
+
 .project-overview {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1533,6 +1795,7 @@ blockquote {
 @media (max-width: 900px) {
   .personal-hero,
   .about-band,
+  .home-about,
   .strengths-band,
   .demo-panel,
   .project,
@@ -1588,6 +1851,25 @@ blockquote {
 
   .project-overview {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .perspective-grid,
+  .role-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perspective-grid article {
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid #95a89e;
+  }
+
+  .perspective-grid article:last-child {
+    border-bottom: 0;
+  }
+
+  .perspective-grid h3 {
+    margin-top: 38px;
   }
 }
 
@@ -1659,6 +1941,26 @@ blockquote {
   }
 
   .about-columns {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .page-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .page-directory > a,
+  .role-experience-grid article {
+    min-height: auto;
+  }
+
+  .experience-entry,
+  .education-list article {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .entry-points {
     grid-template-columns: 1fr;
     gap: 18px;
   }

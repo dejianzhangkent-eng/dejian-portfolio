@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>交互作品 | 张德健个人主页</title>
+    <meta name="description" content="张德健的可操作交互作品，包括遛狗预约流程和二手交易筛选原型。">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="返回个人主页"><span class="brand-mark">DZ</span><span>张德健</span></a>
+      <nav aria-label="主导航">
+        <a href="index.html">个人主页</a>
+        <a href="experience.html">经历</a>
+        <a class="active" href="interactions.html">交互作品</a>
+        <a href="projects.html">项目</a>
+        <a href="contact.html">联系</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero grounded-hero">
+        <p class="eyebrow">Interaction Work</p>
+        <h1>交互作品</h1>
+        <p>
+          这两个网页原型是根据过往课程项目重新制作的。我保留了最核心的任务流程，用来展示我对页面状态、操作反馈和信息层级的理解。
+        </p>
+      </section>
+
+      <section class="section playground-band interaction-page">
+        <div class="playground">
+          <div class="demo-tabs" role="tablist" aria-label="选择交互作品">
+            <button class="demo-tab active" type="button" role="tab" aria-selected="true" aria-controls="wag-demo" data-demo="wag-demo">
+              <span>01</span> Wag-n-Walk 预约流程
+            </button>
+            <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="market-demo" data-demo="market-demo">
+              <span>02</span> 二手交易筛选
+            </button>
+          </div>
+
+          <div class="demo-stage">
+            <section class="demo-panel active" id="wag-demo" role="tabpanel">
+              <div class="demo-context">
+                <p class="tag">服务设计 · 用户信任</p>
+                <h3>Wag-n-Walk 预约流程</h3>
+                <p>这个项目关注养宠人群没有时间遛狗、又担心服务过程不透明的问题。原型把时长、服务人员和安全功能放在一个连续流程里。</p>
+                <a class="text-link" href="03_CCT204_Wag-n-Walk_Design-Thinking-Project.pdf">查看课程项目 PDF</a>
+              </div>
+              <div class="prototype-shell" aria-label="Wag-n-Walk 可交互预约原型">
+                <div class="prototype-topbar">
+                  <strong>Wag-n-Walk</strong>
+                  <span id="booking-step-label">Step 1 / 3</span>
+                </div>
+                <div class="prototype-progress"><span id="booking-progress"></span></div>
+
+                <div class="booking-screen active" data-step="1">
+                  <p class="prototype-label">今天需要多长时间？</p>
+                  <div class="duration-options">
+                    <button class="choice-button active" type="button" data-duration="30" data-price="88"><span>30 分钟</span><strong>¥88</strong></button>
+                    <button class="choice-button" type="button" data-duration="60" data-price="148"><span>60 分钟</span><strong>¥148</strong></button>
+                    <button class="choice-button" type="button" data-duration="90" data-price="208"><span>90 分钟</span><strong>¥208</strong></button>
+                  </div>
+                  <label class="toggle-row">
+                    <span><strong>实时路线</strong><small>散步过程中查看位置</small></span>
+                    <input id="tracking-toggle" type="checkbox" checked>
+                    <span class="toggle-control" aria-hidden="true"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><strong>视频更新</strong><small>收到两次短视频记录</small></span>
+                    <input id="video-toggle" type="checkbox">
+                    <span class="toggle-control" aria-hidden="true"></span>
+                  </label>
+                </div>
+
+                <div class="booking-screen" data-step="2">
+                  <p class="prototype-label">选择今天的遛狗员</p>
+                  <div class="walker-list">
+                    <button class="walker-option active" type="button" data-walker="Mia"><span class="walker-avatar coral">M</span><span><strong>Mia</strong><small>4.9 · 128 次服务</small></span><span>首选</span></button>
+                    <button class="walker-option" type="button" data-walker="Leo"><span class="walker-avatar blue">L</span><span><strong>Leo</strong><small>4.8 · 96 次服务</small></span><span>1.2 km</span></button>
+                    <button class="walker-option" type="button" data-walker="Yuki"><span class="walker-avatar green">Y</span><span><strong>Yuki</strong><small>5.0 · 74 次服务</small></span><span>1.8 km</span></button>
+                  </div>
+                </div>
+
+                <div class="booking-screen" data-step="3">
+                  <div class="booking-confirmation">
+                    <span class="confirmation-mark">✓</span>
+                    <p>预约信息已准备好</p>
+                    <h4 id="booking-summary">Mia · 30 分钟 · ¥88</h4>
+                    <small id="booking-features">包含实时路线</small>
+                  </div>
+                </div>
+
+                <div class="prototype-actions">
+                  <button class="icon-button" id="booking-back" type="button" aria-label="上一步" title="上一步">←</button>
+                  <button class="button primary prototype-next" id="booking-next" type="button">下一步</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="demo-panel" id="market-demo" role="tabpanel" hidden>
+              <div class="demo-context">
+                <p class="tag">产品设计 · 高保真原型</p>
+                <h3>二手交易筛选</h3>
+                <p>这个原型聚焦商品搜索与分类筛选。输入关键词或切换分类后，结果数量和列表会立即更新，让当前筛选状态更明确。</p>
+                <a class="text-link" href="05_CCT305_High-Fidelity-Prototype_Documentation_Group-10.pdf">查看课程项目 PDF</a>
+              </div>
+              <div class="prototype-shell market-shell" aria-label="二手交易筛选交互原型">
+                <div class="market-header"><strong>Loop Market</strong><span><b id="result-count">6</b> 件商品</span></div>
+                <label class="search-field"><span aria-hidden="true">⌕</span><input id="market-search" type="search" placeholder="搜索相机、耳机、台灯…" autocomplete="off"></label>
+                <div class="filter-row" role="group" aria-label="商品分类">
+                  <button class="filter-chip active" type="button" data-category="all">全部</button>
+                  <button class="filter-chip" type="button" data-category="digital">数码</button>
+                  <button class="filter-chip" type="button" data-category="home">家居</button>
+                  <button class="filter-chip" type="button" data-category="outdoor">户外</button>
+                </div>
+                <div class="market-results" id="market-results">
+                  <article data-category="digital" data-keywords="富士 相机 fujifilm"><span class="product-swatch swatch-coral">CAM</span><div><strong>Fujifilm X-T20</strong><small>九成新 · 深圳</small></div><b>¥3,280</b></article>
+                  <article data-category="digital" data-keywords="索尼 耳机 sony headphone"><span class="product-swatch swatch-blue">AUD</span><div><strong>Sony WH-1000XM4</strong><small>轻微使用痕迹</small></div><b>¥1,180</b></article>
+                  <article data-category="home" data-keywords="台灯 灯 家居 lamp"><span class="product-swatch swatch-yellow">LMP</span><div><strong>Artemide 台灯</strong><small>成色很好 · 自提</small></div><b>¥620</b></article>
+                  <article data-category="outdoor" data-keywords="露营 椅子 户外 camping chair"><span class="product-swatch swatch-green">OUT</span><div><strong>Helinox 露营椅</strong><small>使用 3 次</small></div><b>¥480</b></article>
+                  <article data-category="digital" data-keywords="机械 键盘 keyboard"><span class="product-swatch swatch-purple">KEY</span><div><strong>Keychron Q1</strong><small>青轴 · 配件齐全</small></div><b>¥690</b></article>
+                  <article data-category="home" data-keywords="咖啡机 家居 coffee"><span class="product-swatch swatch-dark">COF</span><div><strong>De'Longhi 咖啡机</strong><small>功能正常 · 可试机</small></div><b>¥860</b></article>
+                </div>
+                <p class="empty-state" id="market-empty" hidden>没有匹配的商品，换个关键词试试。</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Dejian Zhang</span>
+      <span>应届研究生 · 产品方向</span>
+    </footer>
+  </body>
+</html>

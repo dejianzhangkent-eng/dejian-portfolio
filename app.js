@@ -1,25 +1,3 @@
-const roleDescriptions = {
-  product: "从用户痛点、功能定义到原型和验证，让想法进入可执行状态。",
-  ux: "梳理任务路径与信息层级，用交互反馈减少犹豫，让体验更自然。",
-  market: "把消费者、竞品与渠道信号整理成定位、内容和增长判断。",
-  ai: "连接技术可能性、用户价值与伦理边界，思考可信的 AI 产品。",
-};
-
-const roleTabs = document.querySelectorAll(".role-tab");
-const roleDescription = document.querySelector("#role-description");
-
-roleTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    roleTabs.forEach((item) => {
-      item.classList.remove("active");
-      item.setAttribute("aria-selected", "false");
-    });
-    tab.classList.add("active");
-    tab.setAttribute("aria-selected", "true");
-    roleDescription.textContent = roleDescriptions[tab.dataset.role];
-  });
-});
-
 const demoTabs = document.querySelectorAll(".demo-tab");
 const demoPanels = document.querySelectorAll(".demo-panel");
 
