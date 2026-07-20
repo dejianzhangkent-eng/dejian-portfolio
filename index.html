@@ -3,129 +3,459 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About | Dejian Zhang Portfolio</title>
-    <meta name="description" content="About Dejian Zhang, portfolio for product, marketing, and internet roles.">
+    <title>张德健 | 产品、体验与市场</title>
+    <meta name="description" content="张德健的个人主页：产品设计、用户体验、市场研究与 AI 产品思考。">
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="About page">Dejian Zhang</a>
-      <nav aria-label="Primary navigation">
-        <a class="active" href="index.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">DZ</span>
+        <span>张德健</span>
+      </a>
+      <nav aria-label="主导航">
+        <a class="active" href="#about">关于我</a>
+        <a href="#experience">经历</a>
+        <a href="#playground">交互作品</a>
+        <a href="#work">项目</a>
+        <a href="contact.html">联系</a>
       </nav>
     </header>
 
-    <main>
-      <section class="section about-section profile-first">
-        <div>
-          <p class="eyebrow">Profile</p>
-          <h2>关于我</h2>
-        </div>
-        <div class="about-copy">
-          <p>
-            我的背景横跨传播学、信息技术、产品设计、市场研究和 AI 社会影响研究。过往实习中，我参与过官网改版、用户路径优化、市场数据分析、社交媒体运营和海外客户需求整理，也在课程项目中完成过产品概念、原型设计、营销策略与 AI 伦理研究。
+    <main id="top">
+      <section class="personal-hero">
+        <div class="hero-intro">
+          <p class="eyebrow">Product · UX · Market · AI</p>
+          <h1>你好，我是<br><span>张德健。</span></h1>
+          <p class="hero-statement">
+            我把用户需求、市场信号和技术机会，整理成清楚、可验证、能继续推进的产品方案。
           </p>
-          <p>
-            我适合连接业务、用户和技术的岗位：能理解用户需求，也能把洞察整理成产品方案、市场策略或互联网运营动作。
-          </p>
-          <ul class="skill-list">
-            <li>Adobe XD / InDesign / Dreamweaver / After Effects</li>
-            <li>Excel / SQL / Python 基础</li>
-            <li>用户研究 / 竞品分析 / 市场调研 / TikTok 运营分析</li>
-            <li>普通话母语 / 英语流利 / 粤语基础</li>
+          <div class="hero-actions">
+            <a class="button primary" href="#playground">体验交互作品</a>
+            <a class="button" href="01_Resume_Dejian-Zhang.pdf">查看简历</a>
+          </div>
+          <ul class="hero-facts" aria-label="个人概况">
+            <li><strong>香港大学</strong><span>AI、伦理与社会 · 文学硕士</span></li>
+            <li><strong>多伦多大学</strong><span>传播、文化与信息技术 · 文学学士</span></li>
+            <li><strong>3 段实习</strong><span>产品设计、市场研究与运营</span></li>
           </ul>
         </div>
+
+        <div class="hero-visual" aria-label="张德健与代表作品">
+          <figure class="portrait-frame">
+            <img src="assets/dejian-zhang.png" alt="张德健">
+            <figcaption>
+              <span>Based in Shenzhen / Hong Kong</span>
+              <strong>Open to product, UX & growth roles</strong>
+            </figcaption>
+          </figure>
+          <figure class="artifact artifact-one">
+            <img src="assets/hifi-prototype.png" alt="二手交易平台高保真原型">
+          </figure>
+          <figure class="artifact artifact-two">
+            <img src="assets/jewelry-inspector.png" alt="Jexora AI 珠宝鉴定项目">
+          </figure>
+          <span class="visual-note">Research → Prototype → Strategy</span>
+        </div>
       </section>
 
-      <section class="hero about-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">About</p>
-          <h1>把用户需求、市场洞察和 AI 产品机会转化为可落地方案。</h1>
-          <p class="hero-summary">
-            我是张德健，拥有传播、文化与信息技术背景，硕士阶段聚焦人工智能伦理与社会研究。我的求职方向覆盖产品岗位、市场岗位和互联网岗位，作品集重点展示我从研究、分析到产品方案与策略呈现的完整能力。
+      <section class="identity-bar" aria-label="角色定位">
+        <p>我适合连接</p>
+        <div class="role-switcher" role="tablist" aria-label="查看我的角色能力">
+          <button class="role-tab active" type="button" role="tab" aria-selected="true" data-role="product">产品</button>
+          <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="ux">体验</button>
+          <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="market">市场</button>
+          <button class="role-tab" type="button" role="tab" aria-selected="false" data-role="ai">AI</button>
+        </div>
+        <p id="role-description" class="role-description" aria-live="polite">
+          从用户痛点、功能定义到原型和验证，让想法进入可执行状态。
+        </p>
+      </section>
+
+      <section class="section about-band" id="about">
+        <div class="section-kicker">
+          <p class="eyebrow">01 · About</p>
+          <h2>先理解人，<br>再定义问题。</h2>
+        </div>
+        <div class="about-narrative">
+          <p class="large-copy">
+            我的学习与实践跨越传播学、信息技术、产品设计、市场研究和 AI 社会影响研究。
           </p>
-          <div class="hero-actions" aria-label="Portfolio actions">
-            <a class="button primary" href="projects.html">查看项目</a>
-            <a class="button" href="01_Resume_Dejian-Zhang.pdf">下载简历</a>
+          <p>
+            这让我习惯从不同视角看同一个问题：用户为什么会犹豫，业务真正需要什么，技术可以做到哪一步，以及一个方案是否能被团队清楚理解并继续推进。
+          </p>
+          <p>
+            我做过官网架构与界面重构、用户路径优化、竞品与消费者数据分析、海外社交媒体运营，也通过课程项目完成过用户研究、高保真原型、商业化策略与 AI 伦理研究。我希望从事产品、UX 或增长相关岗位，继续把研究和判断转化为更好的真实体验。
+          </p>
+          <div class="personal-quote">
+            <span>我的工作方式</span>
+            <blockquote>保持好奇，找到证据，把复杂问题讲清楚，然后做出可以测试的下一步。</blockquote>
           </div>
-          <div class="proof-grid" aria-label="Portfolio proof points">
-            <div>
-              <strong>6</strong>
-              <span>Selected Projects</span>
-            </div>
-            <div>
-              <strong>3</strong>
-              <span>Internship Experiences</span>
-            </div>
-            <div>
-              <strong>AI</strong>
-              <span>Product & Ethics Focus</span>
-            </div>
-          </div>
-        </div>
-        <aside class="profile-panel" aria-label="Profile highlights">
-          <dl>
-            <div>
-              <dt>求职方向</dt>
-              <dd>产品岗位 / 市场岗位 / 互联网岗位</dd>
-            </div>
-            <div>
-              <dt>核心能力</dt>
-              <dd>用户研究、产品原型、市场分析、数据洞察、AIGC 产品理解</dd>
-            </div>
-            <div>
-              <dt>教育背景</dt>
-              <dd>香港大学 MA, AI Ethics and Society<br>多伦多大学 BA, CCIT</dd>
-            </div>
-            <div>
-              <dt>联系方式</dt>
-              <dd><a href="mailto:dejianzhangkent@outlook.com">dejianzhangkent@outlook.com</a></dd>
-            </div>
-          </dl>
-        </aside>
-      </section>
-
-      <section class="fit-strip" aria-label="Role fit summary">
-        <div>
-          <strong>产品</strong>
-          <span>从用户痛点、功能定义到高保真原型和可用性优化。</span>
-        </div>
-        <div>
-          <strong>市场</strong>
-          <span>从消费者洞察、竞品分析到品牌策略和广告方案。</span>
-        </div>
-        <div>
-          <strong>互联网</strong>
-          <span>结合内容运营、数据分析和 AI 方向理解推进增长。</span>
         </div>
       </section>
 
-      <section class="section signature-section">
-        <div>
-          <p class="eyebrow">Positioning</p>
-          <h2>我能带来的价值</h2>
+      <section class="section capability-band">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">What I Do Well</p>
+            <h2>我的擅长点</h2>
+          </div>
+          <p>不是孤立的工具列表，而是一条从发现问题到交付方案的完整路径。</p>
         </div>
-        <div class="signature-grid">
+        <div class="capability-grid">
+          <article>
+            <span class="capability-number">01</span>
+            <h3>洞察与定义</h3>
+            <p>通过访谈、问卷、竞品观察和数据分析识别用户痛点，把模糊需求整理成明确的问题与机会。</p>
+            <ul>
+              <li>用户研究</li>
+              <li>市场调研</li>
+              <li>竞品分析</li>
+            </ul>
+          </article>
+          <article>
+            <span class="capability-number">02</span>
+            <h3>产品与体验</h3>
+            <p>梳理核心任务与信息架构，用线框、高保真原型和可用性反馈推动体验逐步成形。</p>
+            <ul>
+              <li>用户旅程</li>
+              <li>交互原型</li>
+              <li>可用性测试</li>
+            </ul>
+          </article>
+          <article>
+            <span class="capability-number">03</span>
+            <h3>策略与表达</h3>
+            <p>把研究结论翻译成产品定位、营销策略、GTM 路径和清晰的视觉呈现，让方案更容易达成共识。</p>
+            <ul>
+              <li>商业化思考</li>
+              <li>内容策略</li>
+              <li>方案呈现</li>
+            </ul>
+          </article>
+          <article>
+            <span class="capability-number">04</span>
+            <h3>数据与 AI</h3>
+            <p>使用 Excel、SQL 和基础 Python 支撑判断，并关注 AIGC、大语言模型与负责任 AI 的产品机会。</p>
+            <ul>
+              <li>数据洞察</li>
+              <li>AI 产品理解</li>
+              <li>伦理与治理</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section experience-band" id="experience">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">02 · Experience</p>
+            <h2>经历塑造方法</h2>
+          </div>
+          <p>从客户反馈到产品页面，从市场数据到传播策略，我一直在练习连接人、信息与行动。</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item featured">
+            <div class="timeline-time">2025.09 - 2026.11</div>
+            <div class="timeline-main">
+              <p class="timeline-type">Education · Master</p>
+              <h3>香港大学</h3>
+              <p>人工智能、伦理与社会方向文学硕士。系统理解 AI 技术、应用场景与社会影响，关注技术价值、责任与用户信任之间的平衡。</p>
+            </div>
+            <span class="timeline-marker">HKU</span>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">2023.11 - 2024.04</div>
+            <div class="timeline-main">
+              <p class="timeline-type">UI/UX · Market Research</p>
+              <h3>A.M. Footwear Inc.</h3>
+              <p>规划并重构官网架构，优化 CTA 与用户路径；整合竞品销量、款式和社交平台数据，为产品选型、定价和广告表达提供依据。</p>
+            </div>
+            <span class="timeline-marker">01</span>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">2023.04 - 2023.08</div>
+            <div class="timeline-main">
+              <p class="timeline-type">Operations · Web Design</p>
+              <h3>深圳鑫洋船务有限公司</h3>
+              <p>参与官网改版并独立设计网页模板；结合 TikTok 后台数据分析用户画像、内容节奏与潜在受众，支持品牌海外曝光。</p>
+            </div>
+            <span class="timeline-marker">02</span>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-time">2021.04 - 2021.08</div>
+            <div class="timeline-main">
+              <p class="timeline-type">Product · Client Insight</p>
+              <h3>深圳美基兴业金属制品有限公司</h3>
+              <p>对接海外客户，收集需求、使用反馈与改进建议，整理后同步产品团队，并参与客户拓展与售后运营。</p>
+            </div>
+            <span class="timeline-marker">03</span>
+          </article>
+          <article class="timeline-item education">
+            <div class="timeline-time">2020.09 - 2025.05</div>
+            <div class="timeline-main">
+              <p class="timeline-type">Education · Bachelor</p>
+              <h3>多伦多大学</h3>
+              <p>传播、文化与信息技术专业文学学士。在传播、设计、技术与商业的交叉课程中建立跨领域思考能力。</p>
+            </div>
+            <span class="timeline-marker">UofT</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section strengths-band">
+        <div class="section-kicker">
+          <p class="eyebrow">My Advantages</p>
+          <h2>我能带来的<br>不止一种视角</h2>
+        </div>
+        <div class="strengths-list">
           <article>
             <span>01</span>
-            <h3>把用户问题转化为产品方案</h3>
-            <p>能从用户研究、痛点拆解、功能定义到原型表达，形成可讨论、可测试、可迭代的产品方案。</p>
+            <div>
+              <h3>跨文化沟通</h3>
+              <p>普通话母语、英语流利，并有海外学习与客户沟通经验，能在不同背景的成员之间准确传递信息。</p>
+            </div>
           </article>
           <article>
             <span>02</span>
-            <h3>把市场信息转化为增长判断</h3>
-            <p>能结合竞品、消费者、渠道和品牌定位做分析，为营销策略、广告表达和产品选型提供依据。</p>
+            <div>
+              <h3>从研究走到交付</h3>
+              <p>不止停在洞察报告，也能继续完成信息架构、原型、页面实现、策略材料与汇报呈现。</p>
+            </div>
           </article>
           <article>
             <span>03</span>
-            <h3>把 AI 趋势转化为业务机会</h3>
-            <p>关注 AIGC、大语言模型和 AI 产品伦理，能在技术可能性、用户价值和商业化之间建立连接。</p>
+            <div>
+              <h3>数据与同理心并重</h3>
+              <p>用数据发现规律，也重视行为背后的动机，让判断既有证据，又不失去对真实用户的理解。</p>
+            </div>
+          </article>
+          <article>
+            <span>04</span>
+            <div>
+              <h3>面向未来的技术判断</h3>
+              <p>持续关注 AIGC 和大语言模型，同时把伦理、隐私与信任视为 AI 产品体验的一部分。</p>
+            </div>
           </article>
         </div>
       </section>
 
+      <section class="section playground-band" id="playground">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">03 · Interaction Playground</p>
+            <h2>把思考变成<br>可以操作的体验</h2>
+          </div>
+          <p>以下交互原型来自过往项目的核心任务。我把原有静态设计重新制作成网页体验，展示流程、反馈和状态变化。</p>
+        </div>
+
+        <div class="playground">
+          <div class="demo-tabs" role="tablist" aria-label="选择交互作品">
+            <button class="demo-tab active" type="button" role="tab" aria-selected="true" aria-controls="wag-demo" data-demo="wag-demo">
+              <span>01</span> Wag-n-Walk 预约流程
+            </button>
+            <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="market-demo" data-demo="market-demo">
+              <span>02</span> 二手交易筛选
+            </button>
+          </div>
+
+          <div class="demo-stage">
+            <section class="demo-panel active" id="wag-demo" role="tabpanel">
+              <div class="demo-context">
+                <p class="tag">服务设计 · 用户信任</p>
+                <h3>更安心地预约遛狗服务</h3>
+                <p>将时间、服务透明度与安全保障整合到连续任务中，减少用户在委托宠物时的不确定感。</p>
+                <a class="text-link" href="03_CCT204_Wag-n-Walk_Design-Thinking-Project.pdf">查看完整案例</a>
+              </div>
+              <div class="prototype-shell" aria-label="Wag-n-Walk 可交互预约原型">
+                <div class="prototype-topbar">
+                  <strong>Wag-n-Walk</strong>
+                  <span id="booking-step-label">Step 1 / 3</span>
+                </div>
+                <div class="prototype-progress"><span id="booking-progress"></span></div>
+
+                <div class="booking-screen active" data-step="1">
+                  <p class="prototype-label">今天需要多长时间？</p>
+                  <div class="duration-options">
+                    <button class="choice-button active" type="button" data-duration="30" data-price="88">
+                      <span>30 分钟</span><strong>¥88</strong>
+                    </button>
+                    <button class="choice-button" type="button" data-duration="60" data-price="148">
+                      <span>60 分钟</span><strong>¥148</strong>
+                    </button>
+                    <button class="choice-button" type="button" data-duration="90" data-price="208">
+                      <span>90 分钟</span><strong>¥208</strong>
+                    </button>
+                  </div>
+                  <label class="toggle-row">
+                    <span><strong>实时路线</strong><small>散步过程中查看位置</small></span>
+                    <input id="tracking-toggle" type="checkbox" checked>
+                    <span class="toggle-control" aria-hidden="true"></span>
+                  </label>
+                  <label class="toggle-row">
+                    <span><strong>视频更新</strong><small>收到两次短视频记录</small></span>
+                    <input id="video-toggle" type="checkbox">
+                    <span class="toggle-control" aria-hidden="true"></span>
+                  </label>
+                </div>
+
+                <div class="booking-screen" data-step="2">
+                  <p class="prototype-label">选择今天的遛狗员</p>
+                  <div class="walker-list">
+                    <button class="walker-option active" type="button" data-walker="Mia">
+                      <span class="walker-avatar coral">M</span>
+                      <span><strong>Mia</strong><small>4.9 · 128 次服务</small></span>
+                      <span>首选</span>
+                    </button>
+                    <button class="walker-option" type="button" data-walker="Leo">
+                      <span class="walker-avatar blue">L</span>
+                      <span><strong>Leo</strong><small>4.8 · 96 次服务</small></span>
+                      <span>1.2 km</span>
+                    </button>
+                    <button class="walker-option" type="button" data-walker="Yuki">
+                      <span class="walker-avatar green">Y</span>
+                      <span><strong>Yuki</strong><small>5.0 · 74 次服务</small></span>
+                      <span>1.8 km</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="booking-screen" data-step="3">
+                  <div class="booking-confirmation">
+                    <span class="confirmation-mark">✓</span>
+                    <p>预约信息已准备好</p>
+                    <h4 id="booking-summary">Mia · 30 分钟 · ¥88</h4>
+                    <small id="booking-features">包含实时路线</small>
+                  </div>
+                </div>
+
+                <div class="prototype-actions">
+                  <button class="icon-button" id="booking-back" type="button" aria-label="上一步" title="上一步">←</button>
+                  <button class="button primary prototype-next" id="booking-next" type="button">下一步</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="demo-panel" id="market-demo" role="tabpanel" hidden>
+              <div class="demo-context">
+                <p class="tag">UX · 高保真原型</p>
+                <h3>快速找到合适的二手商品</h3>
+                <p>用即时搜索、清晰的筛选状态和结果反馈，减少用户在浏览大量商品时的认知负担。</p>
+                <a class="text-link" href="05_CCT305_High-Fidelity-Prototype_Documentation_Group-10.pdf">查看完整案例</a>
+              </div>
+              <div class="prototype-shell market-shell" aria-label="二手交易筛选交互原型">
+                <div class="market-header">
+                  <strong>Loop Market</strong>
+                  <span><b id="result-count">6</b> 件商品</span>
+                </div>
+                <label class="search-field">
+                  <span aria-hidden="true">⌕</span>
+                  <input id="market-search" type="search" placeholder="搜索相机、耳机、台灯…" autocomplete="off">
+                </label>
+                <div class="filter-row" role="group" aria-label="商品分类">
+                  <button class="filter-chip active" type="button" data-category="all">全部</button>
+                  <button class="filter-chip" type="button" data-category="digital">数码</button>
+                  <button class="filter-chip" type="button" data-category="home">家居</button>
+                  <button class="filter-chip" type="button" data-category="outdoor">户外</button>
+                </div>
+                <div class="market-results" id="market-results">
+                  <article data-category="digital" data-keywords="富士 相机 fujifilm">
+                    <span class="product-swatch swatch-coral">CAM</span>
+                    <div><strong>Fujifilm X-T20</strong><small>九成新 · 深圳</small></div>
+                    <b>¥3,280</b>
+                  </article>
+                  <article data-category="digital" data-keywords="索尼 耳机 sony headphone">
+                    <span class="product-swatch swatch-blue">AUD</span>
+                    <div><strong>Sony WH-1000XM4</strong><small>轻微使用痕迹</small></div>
+                    <b>¥1,180</b>
+                  </article>
+                  <article data-category="home" data-keywords="台灯 灯 家居 lamp">
+                    <span class="product-swatch swatch-yellow">LMP</span>
+                    <div><strong>Artemide 台灯</strong><small>成色很好 · 自提</small></div>
+                    <b>¥620</b>
+                  </article>
+                  <article data-category="outdoor" data-keywords="露营 椅子 户外 camping chair">
+                    <span class="product-swatch swatch-green">OUT</span>
+                    <div><strong>Helinox 露营椅</strong><small>使用 3 次</small></div>
+                    <b>¥480</b>
+                  </article>
+                  <article data-category="digital" data-keywords="机械 键盘 keyboard">
+                    <span class="product-swatch swatch-purple">KEY</span>
+                    <div><strong>Keychron Q1</strong><small>青轴 · 配件齐全</small></div>
+                    <b>¥690</b>
+                  </article>
+                  <article data-category="home" data-keywords="咖啡机 家居 coffee">
+                    <span class="product-swatch swatch-dark">COF</span>
+                    <div><strong>De'Longhi 咖啡机</strong><small>功能正常 · 可试机</small></div>
+                    <b>¥860</b>
+                  </article>
+                </div>
+                <p class="empty-state" id="market-empty" hidden>没有匹配的商品，换个关键词试试。</p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="section selected-work" id="work">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">04 · Selected Work</p>
+            <h2>项目是方法的证据</h2>
+          </div>
+          <div>
+            <p>精选产品、体验、市场与 AI 研究案例。每个项目都保留完整原始文档。</p>
+            <a class="text-link" href="projects.html">浏览全部六个项目</a>
+          </div>
+        </div>
+        <div class="featured-work-grid">
+          <a class="work-card work-card-large" href="02_PHIL7014_Jewelry-Inspector_Pre-Presentation.pdf">
+            <img src="assets/jewelry-inspector.png" alt="Jexora AI Jewelry Inspector 项目封面">
+            <span class="work-index">01</span>
+            <div class="work-card-copy">
+              <p>AI 产品 · 商业化 · GTM</p>
+              <h3>Jexora AI Jewelry Inspector</h3>
+              <span>从行业痛点到硬件与 SaaS 收入模型</span>
+            </div>
+          </a>
+          <a class="work-card" href="05_CCT305_High-Fidelity-Prototype_Documentation_Group-10.pdf">
+            <img src="assets/hifi-prototype.png" alt="二手交易平台高保真原型项目封面">
+            <span class="work-index">02</span>
+            <div class="work-card-copy">
+              <p>UX · 高保真原型</p>
+              <h3>Second-hand Trading Platform</h3>
+              <span>围绕核心任务优化发布、筛选与沟通</span>
+            </div>
+          </a>
+          <a class="work-card" href="07_CCT356_AM-Footwear_Strategic-Marketing-Plan.pdf">
+            <img src="assets/am-marketing-plan.png" alt="AM Footwear 营销策略项目封面">
+            <span class="work-index">03</span>
+            <div class="work-card-copy">
+              <p>市场 · 品牌增长</p>
+              <h3>AM Footwear Strategy</h3>
+              <span>用消费者与竞品洞察支持增长判断</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-cta">
+        <div>
+          <p class="eyebrow">Let's Connect</p>
+          <h2>期待一起，把值得做的想法推进一步。</h2>
+        </div>
+        <div>
+          <p>正在寻找产品、UX、市场增长与 AI 产品相关机会。</p>
+          <a class="button light" href="mailto:dejianzhangkent@outlook.com">dejianzhangkent@outlook.com</a>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Dejian Zhang</span>
+      <span>Product · Experience · Strategy</span>
+    </footer>
   </body>
 </html>
