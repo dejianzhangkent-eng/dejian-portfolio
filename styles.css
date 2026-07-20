@@ -471,6 +471,25 @@ h3 {
   align-self: start;
 }
 
+.about-band .section-kicker {
+  max-width: 430px;
+  padding-top: 4px;
+}
+
+.about-band .section-kicker h2 {
+  font-size: clamp(44px, 5.2vw, 70px);
+}
+
+.about-role {
+  max-width: 330px;
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink);
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 750;
+}
+
 .about-narrative {
   max-width: 860px;
   color: var(--muted);
@@ -485,8 +504,17 @@ h3 {
   line-height: 1.35;
 }
 
-.about-narrative > p:not(.large-copy) {
-  max-width: 760px;
+.about-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 54px);
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.about-columns p {
+  margin: 0;
 }
 
 .personal-quote {
@@ -1628,6 +1656,11 @@ blockquote {
 
   .personal-quote {
     grid-template-columns: 1fr;
+  }
+
+  .about-columns {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .capability-grid {
