@@ -220,7 +220,7 @@ nav a.active::after {
 }
 
 .section {
-  padding: clamp(74px, 9vw, 126px) clamp(20px, 4.5vw, 72px);
+  padding: clamp(64px, 8vw, 108px) clamp(20px, 4.5vw, 72px);
 }
 
 .section-heading {
@@ -243,7 +243,7 @@ nav a.active::after {
 
 h2 {
   margin-bottom: 0;
-  font-size: clamp(38px, 5.7vw, 72px);
+  font-size: clamp(36px, 5vw, 64px);
   line-height: 1.05;
 }
 
@@ -1458,7 +1458,7 @@ blockquote {
 /* Projects page */
 
 .page-hero {
-  padding: clamp(64px, 8vw, 108px) clamp(20px, 4.5vw, 72px) clamp(42px, 6vw, 76px);
+  padding: clamp(56px, 7vw, 92px) clamp(20px, 4.5vw, 72px) clamp(38px, 5vw, 64px);
   background: white;
   border-bottom: 1px solid var(--line);
 }
@@ -1466,7 +1466,7 @@ blockquote {
 .page-hero h1,
 .contact-page h1 {
   margin: 0;
-  font-size: clamp(54px, 8vw, 104px);
+  font-size: clamp(50px, 7vw, 88px);
   line-height: 0.95;
 }
 
@@ -1631,7 +1631,7 @@ blockquote {
 }
 
 .project-overview article {
-  min-height: 170px;
+  min-height: 150px;
   padding: 24px;
   background: var(--paper);
 }
@@ -2037,17 +2037,32 @@ blockquote {
   }
 
   .project-overview {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-overview article {
+    min-height: 145px;
+    padding: 17px;
+  }
+
+  .project-overview h2 {
+    font-size: 18px;
   }
 
   .page-hero h1,
   .contact-page h1 {
-    font-size: 52px;
+    font-size: 48px;
   }
 
   .site-footer {
     flex-direction: column;
     gap: 4px;
+  }
+}
+
+@media (max-width: 340px) {
+  .project-overview {
+    grid-template-columns: 1fr;
   }
 }
 

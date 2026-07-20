@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>交互作品 | 张德健个人主页</title>
     <meta name="description" content="张德健的可操作交互作品，包括遛狗预约流程和二手交易筛选原型。">
+    <link rel="icon" href="assets/dejian-zhang.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
   </head>
@@ -14,7 +15,7 @@
       <nav aria-label="主导航">
         <a href="index.html">个人主页</a>
         <a href="experience.html">经历</a>
-        <a class="active" href="interactions.html">交互作品</a>
+        <a class="active" href="interactions.html" aria-current="page">交互作品</a>
         <a href="projects.html">项目</a>
         <a href="contact.html">联系</a>
       </nav>
@@ -32,16 +33,16 @@
       <section class="section playground-band interaction-page">
         <div class="playground">
           <div class="demo-tabs" role="tablist" aria-label="选择交互作品">
-            <button class="demo-tab active" type="button" role="tab" aria-selected="true" aria-controls="wag-demo" data-demo="wag-demo">
+            <button class="demo-tab active" id="wag-tab" type="button" role="tab" aria-selected="true" aria-controls="wag-demo" data-demo="wag-demo">
               <span>01</span> Wag-n-Walk 预约流程
             </button>
-            <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="market-demo" data-demo="market-demo">
+            <button class="demo-tab" id="market-tab" type="button" role="tab" aria-selected="false" aria-controls="market-demo" data-demo="market-demo">
               <span>02</span> 二手交易筛选
             </button>
           </div>
 
           <div class="demo-stage">
-            <section class="demo-panel active" id="wag-demo" role="tabpanel">
+            <section class="demo-panel active" id="wag-demo" role="tabpanel" aria-labelledby="wag-tab">
               <div class="demo-context">
                 <p class="tag">服务设计 · 用户信任</p>
                 <h3>Wag-n-Walk 预约流程</h3>
@@ -51,16 +52,16 @@
               <div class="prototype-shell" aria-label="Wag-n-Walk 可交互预约原型">
                 <div class="prototype-topbar">
                   <strong>Wag-n-Walk</strong>
-                  <span id="booking-step-label">Step 1 / 3</span>
+                  <span id="booking-step-label" aria-live="polite">Step 1 / 3</span>
                 </div>
                 <div class="prototype-progress"><span id="booking-progress"></span></div>
 
                 <div class="booking-screen active" data-step="1">
                   <p class="prototype-label">今天需要多长时间？</p>
                   <div class="duration-options">
-                    <button class="choice-button active" type="button" data-duration="30" data-price="88"><span>30 分钟</span><strong>¥88</strong></button>
-                    <button class="choice-button" type="button" data-duration="60" data-price="148"><span>60 分钟</span><strong>¥148</strong></button>
-                    <button class="choice-button" type="button" data-duration="90" data-price="208"><span>90 分钟</span><strong>¥208</strong></button>
+                    <button class="choice-button active" type="button" aria-pressed="true" data-duration="30" data-price="88"><span>30 分钟</span><strong>¥88</strong></button>
+                    <button class="choice-button" type="button" aria-pressed="false" data-duration="60" data-price="148"><span>60 分钟</span><strong>¥148</strong></button>
+                    <button class="choice-button" type="button" aria-pressed="false" data-duration="90" data-price="208"><span>90 分钟</span><strong>¥208</strong></button>
                   </div>
                   <label class="toggle-row">
                     <span><strong>实时路线</strong><small>散步过程中查看位置</small></span>
@@ -77,14 +78,14 @@
                 <div class="booking-screen" data-step="2">
                   <p class="prototype-label">选择今天的遛狗员</p>
                   <div class="walker-list">
-                    <button class="walker-option active" type="button" data-walker="Mia"><span class="walker-avatar coral">M</span><span><strong>Mia</strong><small>4.9 · 128 次服务</small></span><span>首选</span></button>
-                    <button class="walker-option" type="button" data-walker="Leo"><span class="walker-avatar blue">L</span><span><strong>Leo</strong><small>4.8 · 96 次服务</small></span><span>1.2 km</span></button>
-                    <button class="walker-option" type="button" data-walker="Yuki"><span class="walker-avatar green">Y</span><span><strong>Yuki</strong><small>5.0 · 74 次服务</small></span><span>1.8 km</span></button>
+                    <button class="walker-option active" type="button" aria-pressed="true" data-walker="Mia"><span class="walker-avatar coral">M</span><span><strong>Mia</strong><small>4.9 · 128 次服务</small></span><span>首选</span></button>
+                    <button class="walker-option" type="button" aria-pressed="false" data-walker="Leo"><span class="walker-avatar blue">L</span><span><strong>Leo</strong><small>4.8 · 96 次服务</small></span><span>1.2 km</span></button>
+                    <button class="walker-option" type="button" aria-pressed="false" data-walker="Yuki"><span class="walker-avatar green">Y</span><span><strong>Yuki</strong><small>5.0 · 74 次服务</small></span><span>1.8 km</span></button>
                   </div>
                 </div>
 
                 <div class="booking-screen" data-step="3">
-                  <div class="booking-confirmation">
+                  <div class="booking-confirmation" aria-live="polite">
                     <span class="confirmation-mark">✓</span>
                     <p>预约信息已准备好</p>
                     <h4 id="booking-summary">Mia · 30 分钟 · ¥88</h4>
@@ -99,7 +100,7 @@
               </div>
             </section>
 
-            <section class="demo-panel" id="market-demo" role="tabpanel" hidden>
+            <section class="demo-panel" id="market-demo" role="tabpanel" aria-labelledby="market-tab" hidden>
               <div class="demo-context">
                 <p class="tag">产品设计 · 高保真原型</p>
                 <h3>二手交易筛选</h3>
@@ -108,12 +109,12 @@
               </div>
               <div class="prototype-shell market-shell" aria-label="二手交易筛选交互原型">
                 <div class="market-header"><strong>Loop Market</strong><span><b id="result-count">6</b> 件商品</span></div>
-                <label class="search-field"><span aria-hidden="true">⌕</span><input id="market-search" type="search" placeholder="搜索相机、耳机、台灯…" autocomplete="off"></label>
+                <label class="search-field"><span aria-hidden="true">⌕</span><input id="market-search" type="search" aria-label="搜索二手商品" placeholder="搜索相机、耳机、台灯…" autocomplete="off"></label>
                 <div class="filter-row" role="group" aria-label="商品分类">
-                  <button class="filter-chip active" type="button" data-category="all">全部</button>
-                  <button class="filter-chip" type="button" data-category="digital">数码</button>
-                  <button class="filter-chip" type="button" data-category="home">家居</button>
-                  <button class="filter-chip" type="button" data-category="outdoor">户外</button>
+                  <button class="filter-chip active" type="button" aria-pressed="true" data-category="all">全部</button>
+                  <button class="filter-chip" type="button" aria-pressed="false" data-category="digital">数码</button>
+                  <button class="filter-chip" type="button" aria-pressed="false" data-category="home">家居</button>
+                  <button class="filter-chip" type="button" aria-pressed="false" data-category="outdoor">户外</button>
                 </div>
                 <div class="market-results" id="market-results">
                   <article data-category="digital" data-keywords="富士 相机 fujifilm"><span class="product-swatch swatch-coral">CAM</span><div><strong>Fujifilm X-T20</strong><small>九成新 · 深圳</small></div><b>¥3,280</b></article>

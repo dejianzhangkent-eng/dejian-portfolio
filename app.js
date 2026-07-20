@@ -55,8 +55,12 @@ function updateBooking() {
 
 document.querySelectorAll(".choice-button").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".choice-button").forEach((item) => item.classList.remove("active"));
+    document.querySelectorAll(".choice-button").forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
     selectedDuration = Number(button.dataset.duration);
     selectedPrice = Number(button.dataset.price);
   });
@@ -64,8 +68,12 @@ document.querySelectorAll(".choice-button").forEach((button) => {
 
 document.querySelectorAll(".walker-option").forEach((button) => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".walker-option").forEach((item) => item.classList.remove("active"));
+    document.querySelectorAll(".walker-option").forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
     selectedWalker = button.dataset.walker;
   });
 });
@@ -107,8 +115,12 @@ function filterMarket() {
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    filterButtons.forEach((item) => item.classList.remove("active"));
+    filterButtons.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
     activeCategory = button.dataset.category;
     filterMarket();
   });
