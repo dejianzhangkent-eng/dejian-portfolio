@@ -127,3 +127,27 @@ filterButtons.forEach((button) => {
 });
 
 searchInput.addEventListener("input", filterMarket);
+
+const xdFlowTabs = document.querySelectorAll(".xd-flow-tab");
+const xdScreens = document.querySelectorAll(".xd-screen");
+const xdScreenLabel = document.querySelector("#xd-screen-label");
+
+xdFlowTabs.forEach((button) => {
+  button.addEventListener("click", () => {
+    xdFlowTabs.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-pressed", "false");
+    });
+    xdScreens.forEach((screen) => {
+      screen.classList.remove("active");
+      screen.hidden = true;
+    });
+
+    const target = document.querySelector(`[data-xd-panel="${button.dataset.xdScreen}"]`);
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
+    xdScreenLabel.textContent = button.dataset.xdLabel;
+    target.hidden = false;
+    requestAnimationFrame(() => target.classList.add("active"));
+  });
+});

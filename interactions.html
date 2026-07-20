@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>交互作品 | 张德健个人主页</title>
-    <meta name="description" content="张德健的可操作交互作品，包括遛狗预约流程和二手交易筛选原型。">
+    <meta name="description" content="张德健的交互作品，包括 Wag-n-Walk 预约流程、完整 Adobe XD 原型和二手交易筛选原型。">
     <link rel="icon" href="assets/dejian-zhang.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
@@ -26,7 +26,7 @@
         <p class="eyebrow">Interaction Work</p>
         <h1>交互作品</h1>
         <p>
-          这两个网页原型是根据过往课程项目重新制作的。我保留了最核心的任务流程，用来展示我对页面状态、操作反馈和信息层级的理解。
+          这里收录了三个可以操作或查看的原型。我把课程项目中的关键流程重新整理成网页演示，也保留了完整的 Adobe XD 版本，方便对照查看设计过程和交互细节。
         </p>
       </section>
 
@@ -38,6 +38,9 @@
             </button>
             <button class="demo-tab" id="market-tab" type="button" role="tab" aria-selected="false" aria-controls="market-demo" data-demo="market-demo">
               <span>02</span> 二手交易筛选
+            </button>
+            <button class="demo-tab" id="xd-tab" type="button" role="tab" aria-selected="false" aria-controls="xd-demo" data-demo="xd-demo">
+              <span>03</span> Wag-n-Walk XD 原型
             </button>
           </div>
 
@@ -125,6 +128,88 @@
                   <article data-category="home" data-keywords="咖啡机 家居 coffee"><span class="product-swatch swatch-dark">COF</span><div><strong>De'Longhi 咖啡机</strong><small>功能正常 · 可试机</small></div><b>¥860</b></article>
                 </div>
                 <p class="empty-state" id="market-empty" hidden>没有匹配的商品，换个关键词试试。</p>
+              </div>
+            </section>
+
+            <section class="demo-panel" id="xd-demo" role="tabpanel" aria-labelledby="xd-tab" hidden>
+              <div class="demo-context">
+                <p class="tag">Adobe XD · 高保真原型</p>
+                <h3>Wag-n-Walk 完整原型</h3>
+                <p>这是课程项目中用于用户测试的原始版本，共 37 个手机屏幕。流程从登录开始，覆盖地图找人、查看服务者资料、预约和服务中的即时沟通。</p>
+                <dl class="prototype-meta">
+                  <div><dt>制作时间</dt><dd>2023</dd></div>
+                  <div><dt>画板规格</dt><dd>iPhone 14 Pro Max</dd></div>
+                  <div><dt>主要任务</dt><dd>寻找、预约并联系遛狗员</dd></div>
+                </dl>
+                <a class="button primary xd-open-link" href="https://xd.adobe.com/view/e92f4849-7a6f-404d-8844-7129f2e52eb9-bc7c/" target="_blank" rel="noopener noreferrer">打开完整 Adobe XD 原型</a>
+                <a class="text-link" href="03_CCT204_Wag-n-Walk_Design-Thinking-Project.pdf">查看课程项目 PDF</a>
+              </div>
+
+              <div class="prototype-shell xd-shell" aria-label="Wag-n-Walk Adobe XD 原型流程预览">
+                <div class="xd-preview-header">
+                  <div>
+                    <span>Original prototype</span>
+                    <strong>Wag-n-Walk</strong>
+                  </div>
+                  <span id="xd-screen-label" aria-live="polite">01 / 04 · 登录</span>
+                </div>
+
+                <div class="xd-flow-tabs" role="group" aria-label="选择原型流程画面">
+                  <button class="xd-flow-tab active" type="button" aria-pressed="true" data-xd-screen="login" data-xd-label="01 / 04 · 登录"><span>01</span>登录</button>
+                  <button class="xd-flow-tab" type="button" aria-pressed="false" data-xd-screen="map" data-xd-label="02 / 04 · 找遛狗员"><span>02</span>地图</button>
+                  <button class="xd-flow-tab" type="button" aria-pressed="false" data-xd-screen="profile" data-xd-label="03 / 04 · 查看并预约"><span>03</span>资料</button>
+                  <button class="xd-flow-tab" type="button" aria-pressed="false" data-xd-screen="chat" data-xd-label="04 / 04 · 服务沟通"><span>04</span>沟通</button>
+                </div>
+
+                <div class="xd-phone">
+                  <div class="xd-phone-bar"><span>9:41</span><b>Wag-n-Walk</b><span>•••</span></div>
+
+                  <section class="xd-screen active xd-login-screen" data-xd-panel="login">
+                    <div class="xd-wordmark" aria-hidden="true"><span>W</span></div>
+                    <p>Welcome back</p>
+                    <h4>Log in to continue</h4>
+                    <label><span>Username</span><input type="text" value="Lucywithherdog" readonly></label>
+                    <label><span>Password</span><input type="password" value="wagandwalk" readonly></label>
+                    <button type="button">Login</button>
+                    <small>Sign up &nbsp;·&nbsp; Reset password</small>
+                  </section>
+
+                  <section class="xd-screen xd-map-screen" data-xd-panel="map" hidden>
+                    <div class="map-grid" aria-hidden="true">
+                      <span class="map-route"></span>
+                      <i class="map-pin pin-one"></i>
+                      <i class="map-pin pin-two"></i>
+                      <i class="map-pin pin-three"></i>
+                    </div>
+                    <div class="map-copy"><span>3 nearby</span><strong>Find dog walkers</strong><button type="button">Dog Walkers</button></div>
+                  </section>
+
+                  <section class="xd-screen xd-profile-screen" data-xd-panel="profile" hidden>
+                    <div class="owner-summary"><span class="xd-avatar dog-avatar">D</span><div><small>Your profile</small><strong>@Dancing.Dino</strong><span>Medium dog · 12–2 PM</span></div></div>
+                    <div class="walker-summary">
+                      <span class="xd-avatar walker-face">P</span>
+                      <small>Dog walker's profile</small>
+                      <h4>@Peter.ontherun</h4>
+                      <strong>4.84 / 5</strong>
+                      <dl><div><dt>Experience</dt><dd>12 walks</dd></div><div><dt>Rate</dt><dd>$12 / hour</dd></div></dl>
+                      <button type="button">Book</button>
+                    </div>
+                  </section>
+
+                  <section class="xd-screen xd-chat-screen" data-xd-panel="chat" hidden>
+                    <div class="chat-heading"><span class="xd-avatar walker-face">P</span><div><strong>Peter</strong><small>Service in progress</small></div></div>
+                    <p class="chat-bubble">It's snack time.</p>
+                    <div class="chat-spacer"></div>
+                    <div class="request-actions">
+                      <button type="button"><span>LOC</span>位置</button>
+                      <button type="button"><span>PIC</span>图片</button>
+                      <button type="button"><span>VID</span>视频</button>
+                    </div>
+                    <div class="message-field">发送消息… <span>↑</span></div>
+                  </section>
+                </div>
+
+                <p class="xd-preview-note">本页展示四个关键节点；完整版本包含 37 个可跳转屏幕。</p>
               </div>
             </section>
           </div>
